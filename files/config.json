@@ -1,0 +1,6 @@
+{
+  "backend": "mitie",
+  "mitie_file": "./data/total_word_feature_extractor.dat",
+  "path" : "/usr/src/rasa_nlu/availableModels/",
+  "server_model_dir" : "/usr/src/rasa_nlu/selectedModel"
+}
