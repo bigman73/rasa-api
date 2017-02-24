@@ -9,8 +9,7 @@ RUN pip install git+https://github.com/mit-nlp/MITIE.git \
     && mv MITIE-models/english/total_word_feature_extractor.dat ../rasa_nlu/data/total_word_feature_extractor.dat \
     && cd ../rasa_nlu \
     && python setup.py install \
-    && mkdir availableModels \
-    && mkdir selectedModel
+    && mkdir models
 
 WORKDIR /usr/src/rasa_nlu
 
@@ -19,7 +18,7 @@ COPY ./files/ .
 RUN chmod +x ./start.sh && ls -la
 
 EXPOSE 5000
-VOLUME [ "/usr/src/rasa_nlu/avilableModels", "/usr/src/rasa_nlu/selectedModel" ]
+VOLUME [ "/usr/src/rasa_nlu/models" ]
 
 ENTRYPOINT [ "./start.sh" ]
 CMD [ "start" ]
