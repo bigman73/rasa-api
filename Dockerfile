@@ -15,6 +15,8 @@ WORKDIR /usr/src/rasa_nlu
 
 COPY ./files/ .
 
+RUN pip install -r "./requirements.txt"
+
 RUN chmod +x ./start.sh && ls -la
 
 EXPOSE 5000
