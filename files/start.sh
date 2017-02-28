@@ -4,6 +4,6 @@ set -e
 
 case ${1} in
     start)
-        exec python -m rasa_nlu.server -c ./config.json
+        exec python -m rasa_nlu.server -c ./config.json "${@:2}"
         ;;
 esac
