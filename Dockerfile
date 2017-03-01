@@ -6,14 +6,13 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install git+https://github.com/mit-nlp/MITIE.git \
-    && cd /usr/src \
-    && git clone --branch 0.6-beta https://github.com/golastmile/rasa_nlu.git \
-    && git clone https://github.com/mit-nlp/MITIE.git \
-    && cd MITIE \
-    && make MITIE-models \
-    && mv MITIE-models/english/total_word_feature_extractor.dat ../rasa_nlu/data/total_word_feature_extractor.dat \
-    && cd ../rasa_nlu \
+RUN pip install git+https://github.com/mit-nlp/MITIE.git
+
+RUN cd /usr/src \
+    && git clone https://github.com/golastmile/rasa_nlu.git \
+    && cd rasa_nlu/data \
+    && wget https://s3-eu-west-1.amazonaws.com/mitie/total_word_feature_extractor.dat \
+    && cd .. \
     && mkdir models
 
 WORKDIR /usr/src/rasa_nlu
