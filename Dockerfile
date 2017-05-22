@@ -1,6 +1,7 @@
 # This is a hodge-podge of stuff from a "pre-rasa-having-a-docker-stuff" config and the
 # docker files that are part of the 0.8.6 release (Dockerfile, Dockerfile_full - combining those two)
 #... so posible this config could introduce bugs
+#
 
 FROM python:2.7-slim
 
