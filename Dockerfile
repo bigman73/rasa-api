@@ -18,7 +18,7 @@ RUN apt-get update -qq && \
 RUN cd ${RASA_NLU_PREFIX} && \
     git clone https://github.com/golastmile/rasa_nlu.git && \
     cd ${RASA_NLU_HOME} && \
-    git checkout tags/0.8.8 && \
+    git checkout tags/0.8.9 && \
     mkdir models && \
     wget -P data/ https://s3-eu-west-1.amazonaws.com/mitie/total_word_feature_extractor.dat 
 
